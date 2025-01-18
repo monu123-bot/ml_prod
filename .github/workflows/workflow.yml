@@ -13,15 +13,30 @@ permissions:
 
 jobs:
 
-  lint:
+  
+    
+
+  build:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Build application
-      uses: ./.github/actions/build-application
+    - name: Set up Python 3.13
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.13'
+
+    - name: Install poetry
+      run: |
+        curl -sSL https://install.python-poetry.org | python3 -
+        export PATH=$HOME/.local/bin:$PATH
+      
+    - name: Install dependencies using poetry
+      run: poetry run make install
 
     - name: Lint with flake8
       run: poetry run make check
+
+      
