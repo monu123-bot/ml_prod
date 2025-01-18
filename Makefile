@@ -5,6 +5,8 @@ run: install
 install: pyproject.toml
     poetry install
 clean: 
-	rm -rf `find d -name __pycache__`
+	rm -rf `find . -type d -name __pycache__`
+check:
+    poetry run flake8 src/
 runner:
-	run clean
+	check run clean
