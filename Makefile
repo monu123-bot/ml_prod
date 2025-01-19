@@ -8,6 +8,7 @@ run: install
 install: pyproject.toml
 	# Install the project dependencies using poetry
 	poetry install    
+	
 
 clean: 
 	# Remove all __pycache__ directories
