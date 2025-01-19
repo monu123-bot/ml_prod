@@ -13,7 +13,6 @@ def build_model():
     x, y = get_X_Y(df)
     x_train, x_test, y_train, y_test = split_train_test(x, y)
     rf = train_model(x_train, y_train)
-    score = evaluate_model(rf, x_test, y_test)
     save_model(rf)
     pass
 

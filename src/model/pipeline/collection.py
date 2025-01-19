@@ -1,5 +1,4 @@
 import pandas as pd
-from config.config import session
 from loguru import logger
 
 from config.config import engine
