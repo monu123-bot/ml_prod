@@ -9,7 +9,6 @@ class Base(DeclarativeBase):
 
 class RentApartments(Base):
     __tablename__ = session.table_name
-    # id: Mapped[int] = mapped_column(INTEGER(), primary_key=True, autoincrement=True)
     address: Mapped[str] = mapped_column(VARCHAR(), primary_key=True)
     area: Mapped[float] = mapped_column(REAL())
     constraction_year: Mapped[int] = mapped_column(INTEGER())

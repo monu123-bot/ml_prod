@@ -1,12 +1,11 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
-from pydantic import DirectoryPath, FilePath
+from pydantic import DirectoryPath
 from loguru import logger
 from sqlalchemy import create_engine
 
 
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_file="config/.env", env_file_encoding="utf-8")
-
+    model_config=SettingsConfigDict(env_file="config/.env",env_file_encoding="utf-8")
     model_path: DirectoryPath
     model_name: str
     log_level: str
