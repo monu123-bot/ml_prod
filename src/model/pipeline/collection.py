@@ -14,7 +14,6 @@ from sqlalchemy import select
 
 
 def load_data_from_db():
-    logger.info('extracting data from database table')
+    logger.info("extracting data from database table")
     query = select(RentApartments)
-    return pd.read_sql(query,engine)
-
+    return pd.read_sql(query, engine)

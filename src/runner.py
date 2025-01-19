@@ -11,6 +11,5 @@ def main():
     logger.info(f"prediction = {pred}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
-    

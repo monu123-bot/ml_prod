@@ -1,12 +1,16 @@
-from sqlalchemy import REAL,INTEGER,VARCHAR
-from sqlalchemy.orm import DeclarativeBase,Mapped,mapped_column
+from sqlalchemy import REAL, INTEGER, VARCHAR
+from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 from config.config import session
+
+
 class Base(DeclarativeBase):
     pass
+
+
 class RentApartments(Base):
-    __tablename__= session.table_name
+    __tablename__ = session.table_name
     # id: Mapped[int] = mapped_column(INTEGER(), primary_key=True, autoincrement=True)
-    address: Mapped[str] = mapped_column(VARCHAR(),primary_key=True)  
+    address: Mapped[str] = mapped_column(VARCHAR(), primary_key=True)
     area: Mapped[float] = mapped_column(REAL())
     constraction_year: Mapped[int] = mapped_column(INTEGER())
     rooms: Mapped[int] = mapped_column(INTEGER())
@@ -22,5 +26,4 @@ class RentApartments(Base):
     facilities: Mapped[str] = mapped_column(VARCHAR())
     zip: Mapped[str] = mapped_column(VARCHAR())
     neighborhood: Mapped[str] = mapped_column(VARCHAR())
-    rent: Mapped[int] = mapped_column(INTEGER()) 
-    
+    rent: Mapped[int] = mapped_column(INTEGER())

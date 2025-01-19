@@ -1,18 +1,18 @@
-2024-11-16 12:16:55.502 | INFO     | model.pipeline.model:build_model:10 - starting up model building pipeline
-2024-11-16 12:16:55.508 | INFO     | model.pipeline.preperation:prepare_data:9 - starting up preprocessing pipeline
-2024-11-16 12:16:55.509 | INFO     | model.pipeline.collection:load_data_from_db:17 - extracting data from database table
-2024-11-16 12:16:55.540 | INFO     | model.pipeline.preperation:encode_cat_cols:23 - encoding categorical columns: ['balcony', 'parking', 'furnished', 'garage', 'storage']
-2024-11-16 12:16:55.549 | INFO     | model.pipeline.preperation:parse_garden_col:30 - pasring garden column
-2024-11-16 12:16:56.879 | INFO     | model.pipeline.model:get_X_Y:20 - defining X and Y variables. 
+2025-01-19 18:15:00.363 | INFO     | model.pipeline.model:build_model:10 - starting up model building pipeline
+2025-01-19 18:15:00.379 | INFO     | model.pipeline.preperation:prepare_data:9 - starting up preprocessing pipeline
+2025-01-19 18:15:00.380 | INFO     | model.pipeline.collection:load_data_from_db:17 - extracting data from database table
+2025-01-19 18:15:00.422 | INFO     | model.pipeline.preperation:encode_cat_cols:23 - encoding categorical columns: ['balcony', 'parking', 'furnished', 'garage', 'storage']
+2025-01-19 18:15:00.440 | INFO     | model.pipeline.preperation:parse_garden_col:30 - pasring garden column
+2025-01-19 18:15:02.687 | INFO     | model.pipeline.model:get_X_Y:20 - defining X and Y variables. 
 X vars: ['area', 'constraction_year', 'bedrooms', 'garden', 'balcony_yes', 'parking_yes', 'furnished_yes', 'garage_yes', 'storage_yes']
 y var: rent
-2024-11-16 12:16:56.882 | INFO     | model.pipeline.model:split_train_test:25 - splitting data into train and test sets
-2024-11-16 12:16:56.886 | INFO     | model.pipeline.model:train_model:30 - training a model with hyperparameters
-2024-11-16 12:16:56.886 | DEBUG    | model.pipeline.model:train_model:32 - grid_space = {'n_estimators': [100, 200, 300], 'max_depth': [3, 6, 9, 12]}
-2024-11-16 12:17:15.629 | INFO     | model.pipeline.model:evaluate_model:39 - evaluating model performance. SCORE=0.7306221398747947
-2024-11-16 12:17:15.636 | INFO     | model.pipeline.model:save_model:43 - saving a model to a directory: model\models/rf_db_v1
-2024-11-16 12:17:15.647 | INFO     | __main__:main:7 - Running the application....
-2024-11-16 12:17:15.647 | INFO     | model.model_service:load_model:17 - checking the existance of model config file at model\models/rf_db_v1
-2024-11-16 12:17:15.648 | INFO     | model.model_service:load_model:24 - model rf_db_v1 exists! -> loading model configuration file
-2024-11-16 12:17:15.667 | INFO     | model.model_service:predict:28 - making prediction!
-2024-11-16 12:17:15.672 | INFO     | __main__:main:11 - prediction = [2066.60134124]
+2025-01-19 18:15:02.713 | INFO     | model.pipeline.model:split_train_test:25 - splitting data into train and test sets
+2025-01-19 18:15:02.720 | INFO     | model.pipeline.model:train_model:30 - training a model with hyperparameters
+2025-01-19 18:15:02.720 | DEBUG    | model.pipeline.model:train_model:32 - grid_space = {'n_estimators': [100, 200, 300], 'max_depth': [3, 6, 9, 12]}
+2025-01-19 18:15:23.198 | INFO     | model.pipeline.model:evaluate_model:39 - evaluating model performance. SCORE=0.647146986462546
+2025-01-19 18:15:23.220 | INFO     | model.pipeline.model:save_model:43 - saving a model to a directory: model\models/rf_db_v1
+2025-01-19 18:15:23.255 | INFO     | __main__:main:7 - Running the application....
+2025-01-19 18:15:23.255 | INFO     | model.model_service:load_model:17 - checking the existance of model config file at model\models/rf_db_v1
+2025-01-19 18:15:23.255 | INFO     | model.model_service:load_model:24 - model rf_db_v1 exists! -> loading model configuration file
+2025-01-19 18:15:23.299 | INFO     | model.model_service:predict:28 - making prediction!
+2025-01-19 18:15:23.333 | INFO     | __main__:main:11 - prediction = [2187.65035714]
