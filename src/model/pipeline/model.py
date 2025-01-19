@@ -48,9 +48,7 @@ def train_model(x_train, y_train):
     logger.info("training a model with hyperparameters")
     grid_space = {"n_estimators": [100, 200, 300], "max_depth": [3, 6, 9, 12]}
     logger.debug(f"grid_space = {grid_space}")
-    grid = GridSearchCV(
-        RandomForestRegressor(), param_grid=grid_space, cv=5, scoring="r2"
-    )
+    grid = GridSearchCV(RandomForestRegressor(), param_grid=grid_space, cv=5, scoring="r2")
     mode_grid = grid.fit(x_train, y_train)
 
     return mode_grid.best_estimator_
@@ -62,9 +60,7 @@ def evaluate_model(model, x_test, y_test):
 
 
 def save_model(model):
-    logger.info(
-        f"saving a model to a directory: {session.model_path}/{session.model_name}"
-    )
+    logger.info(f"saving a model to a directory: {session.model_path}/{session.model_name}")
     pk.dump(model, open(f"{session.model_path}/{session.model_name}", "wb"))
 
 
