@@ -1,4 +1,4 @@
-.PHONY: run install clean runner
+.PHONY: run install clean runner check
 .DEFAULT_GOAL := runner
 
 run: install
@@ -7,7 +7,7 @@ run: install
 
 install: pyproject.toml
 	# Install the project dependencies using poetry
-	poetry install
+	poetry install    
 
 clean: 
 	# Remove all __pycache__ directories
@@ -17,6 +17,6 @@ check:
 	# Run flake8 to check code quality in the src directory
 	poetry run flake8 src/
 
-runner:
+runner: check run clean
 	# Run all necessary tasks in sequence
-	check run clean
+	@echo "All tasks executed."
